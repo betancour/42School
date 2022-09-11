@@ -5,25 +5,20 @@ void ft_putchar(char c)
     write(1, &c, 1);
 }
 
-void ft_putnbr(int nb)
+void ft_putnbr(int nbr)
 {
-    if(nb == -2147483648)
+    if(nbr < 0)
     {
         ft_putchar('-');
-		ft_putchar('2');
-		nb = 147483648;
+		ft_putnbr(-nbr);
     }
-    if(nb < 9)
+    else if(nbr > 9)
     {
-        ft_putchar('-');
-		nb *= -1;
-    }
-    if(nb >= 10)
-    {
-        ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+        ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
     }
     else
-        ft_putchar(nb + 48);
+        ft_putchar(nbr + '0');
 }
+
 
