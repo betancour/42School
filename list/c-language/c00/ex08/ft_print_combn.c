@@ -4,43 +4,36 @@ void ft_putchar(char c);
 
 void ft_print_combn(int n)
 {
-    int col[9];
+    int col[n];
     int i;
 
-    i = -1;
-    while(++i < 9)
+    if(n <= 0 || n >= 20)
+        return;
+    else
     {
-        col[i] = (i < n) ? i : -1;
-        if(n == 1)
-            col[0] = 1;
-        while(i)
+        i = 0;
+        while(i < n)
         {
-            i = -1;
-            while(++i < 9 && col[i] >= 0)
-                ft_putchar(col[1] + '0');
-            if(col[0] < 10 - n)
-            {
-                ft_putchar(',');
-                ft_putchar(' ');
-            }
-            if(col[0] == 10 - n)
-                return;
-            col[n - 1]++;
-            i - n -1;
-            if(col[n-1] ==10)
-                while(--i > -10)
-                {
-                    if(col[i] < 10 - n + 1)
-                    {
-                        col[i]++;
-                        while(i < n - 1)
-                        {
-                            col[i + 1] = col[i] + 1;
-                            i++;
-                        }
-                    }
-                }
+            col[i] = i;
+            i++;
         }
+        while(i > 0)
+        {
+            int max;
+            max = 10;
 
+            i = 0;
+            while(i < n)
+            {
+                ft_putchar(combn[i] + '0');
+                i++;
+            }
+            i = n;
+            while(i--)
+            {
+
+
+        }
     }
+
 }
