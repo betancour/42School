@@ -1,4 +1,4 @@
-#include <uunistd.h>
+#include <unistd.h>
 
 void ft_putchar(char c);
 
@@ -8,12 +8,12 @@ void ft_print_combn(int n)
     int i;
 
     i = -1;
-    while(++1 < 9)
+    while(++i < 9)
     {
         col[i] = (i < n) ? i : -1;
         if(n == 1)
             col[0] = 1;
-        while(1)
+        while(i)
         {
             i = -1;
             while(++i < 9 && col[i] >= 0)
@@ -28,7 +28,7 @@ void ft_print_combn(int n)
             col[n - 1]++;
             i - n -1;
             if(col[n-1] ==10)
-                while(--1 > -10)
+                while(--i > -10)
                 {
                     if(col[i] < 10 - n + 1)
                     {
