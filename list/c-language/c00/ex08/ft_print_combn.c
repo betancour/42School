@@ -2,38 +2,69 @@
 
 void ft_putchar(char c);
 
-void ft_print_combn(int n)
+void ft_putend(int nb, int *tab, int pos)
 {
-    int col[n];
     int i;
-
-    if(n <= 0 || n >= 20)
-        return;
-    else
+    
+    if(pos == 1)
     {
-        i = 0;
-        while(i < n)
-        {
-            col[i] = i;
-            i++;
-        }
-        while(i > 0)
-        {
-            int max;
-            max = 10;
+        ft_putchar(',');
+        ft_putchar(' ');
+    }
+    
+    i = 0;
+    while(i < nb)
+    {
+       ft_putchar(tab[i] + '0');
+       i++;
+    }
+}
 
-            i = 0;
-            while(i < n)
-            {
-                ft_putchar(combn[i] + '0');
-                i++;
-            }
-            i = n;
-            while(i--)
-            {
+void    ft_print_combn_increment(int nb, int *tab)
+{
+    int i;
+    int max;
 
-
-        }
+    i = nb - 1;
+    max = 9;
+    while(tab[i] == max)
+    {
+        i -= 1;
+        max -= 1;
     }
 
+    tab[i] += 1;
+    while(i < nb)
+    {
+        tab[1 + 1] = tab[i] + 1;
+        i += 1;
+    }
+}
+
+
+void ft_print_combn(int nb)
+{
+    int tab[10];
+    int i;
+
+    i = 0;
+    while(i < nb)
+    {
+        tab[i] = i;
+        i++;
+    }
+    
+    ft_putend(nb, tab, 0);
+    while(tab[0] != 10 - nb || tab[nb - 1] != 9)
+    {
+        if(tab[nb - 1] != 9)
+        {
+            tab[nb - 1] += 1;
+        }
+        else 
+        {
+            ft_print_combn_increment(nb, tab);
+        }
+        ft_putend(nb, tab, 1);
+    }
 }
