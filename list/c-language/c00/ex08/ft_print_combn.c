@@ -1,8 +1,8 @@
 #include <unistd.h>
 
-void ft_putchar(char c);
+void    ft_putchar(char c);
 
-void ft_putend(int nb, int *tab, int pos)
+void    ft_putend(int nb, int *tab, int pos)
 {
     int i;
     
@@ -42,7 +42,7 @@ void    ft_print_combn_increment(int nb, int *tab)
 }
 
 
-void ft_print_combn(int nb)
+void    ft_print_combn(int nb)
 {
     int tab[10];
     int i;
