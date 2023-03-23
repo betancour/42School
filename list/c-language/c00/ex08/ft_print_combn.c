@@ -4,7 +4,7 @@ void    ft_putchar(char c);
 
 void    ft_putend(int nb, int *tab, int pos)
 {
-    int i;
+    int     i;
     
     if(pos == 1)
     {
@@ -22,8 +22,8 @@ void    ft_putend(int nb, int *tab, int pos)
 
 void    ft_print_combn_increment(int nb, int *tab)
 {
-    int i;
-    int max;
+    int     i;
+    int     max;
 
     i = nb - 1;
     max = 9;
@@ -44,8 +44,8 @@ void    ft_print_combn_increment(int nb, int *tab)
 
 void    ft_print_combn(int nb)
 {
-    int tab[10];
-    int i;
+    int     tab[10];
+    int     i;
 
     i = 0;
     while(i < nb)

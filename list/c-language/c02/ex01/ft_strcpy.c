@@ -1,6 +1,6 @@
-char *ft_strcpy(char *dest, char *src) {
+char    *ft_strcpy(char *dest, char *src) {
     
-    char *original_dest = dest;
+    char    *original_dest = dest;
 
     while(*src != '\0') 
     {
