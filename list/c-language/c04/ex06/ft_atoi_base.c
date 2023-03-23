@@ -1,6 +1,6 @@
 int      ft_strlen(char *str)
 {
-    int i;
+    int     i;
 
     i= 0;
     while(str[i])
@@ -10,8 +10,8 @@ int      ft_strlen(char *str)
 
 int      ft_check_base(char *base)
 {
-    int i;
-    int j;
+    int     i;
+    int     j;
 
     i = 0;
     if(ft_strlen(base) <= 1)
@@ -34,7 +34,7 @@ int      ft_check_base(char *base)
 
 int     ft_get_base_index(char c, char *base)
 {
-    int i;
+    int     i;
 
     i = 0;
     while (base[i])
@@ -48,10 +48,10 @@ int     ft_get_base_index(char c, char *base)
 
 int     ft_atoi_base(char *str, char *base)
 {
-    int i;
-    int sign;
-    int result;
-    int base_len;
+    int     i;
+    int     sign;
+    int     result;
+    int     base_len;
     
     i = 0;
     sign = 1;

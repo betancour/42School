@@ -2,7 +2,7 @@
 
 int     ft_is_safe(int board[], int row, int col)
 {
-    int i;
+    int     i;
 
     i = 0;
     while (i < row)
@@ -16,8 +16,8 @@ int     ft_is_safe(int board[], int row, int col)
 
 void    ft_print_board(int board[], int size)
 {
-    int i;
-    char c;
+    int     i;
+    char    c;
 
     i = 0;
     while (i < size)
@@ -31,7 +31,7 @@ void    ft_print_board(int board[], int size)
 
 void    ft_place_queen(int board[], int row, int size, int *count)
 {
-    int col;
+    int     col;
 
     col = 0;
     while (col < size)
@@ -53,8 +53,8 @@ void    ft_place_queen(int board[], int row, int size, int *count)
 
 int     ft_ten_queens_puzzle(void)
 {
-    int board[10];
-    int count;
+    int     board[10];
+    int     count;
 
     count = 0;
     ft_place_queen(board, 0, 10, &count);

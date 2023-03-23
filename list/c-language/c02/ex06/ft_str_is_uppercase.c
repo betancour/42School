@@ -1,8 +1,8 @@
-int ft_str_is_uppercase(char *str)
+int     ft_str_is_uppercase(char *str)
 {
-    int i;
-    i = 0;
+    int     i;
 
+    i = 0;
     if (!str)
         return (1);
     while (str[i] != '\0')

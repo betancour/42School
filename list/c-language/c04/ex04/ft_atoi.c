@@ -1,7 +1,7 @@
 int     ft_atoi(char *str)
 {
-    int sign = 1;
-    int result = 0;
+    int     sign = 1;
+    int     result = 0;
     
     while(*str == ' ' || (*str >= 9 && *str <= 13))
         str++;

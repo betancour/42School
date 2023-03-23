@@ -1,6 +1,6 @@
-ft_str_is_printable(char *str)
+ft_str_is_printable     (char *str)
 {
-    int i;
+    int     i;
 
     i = 0;
 

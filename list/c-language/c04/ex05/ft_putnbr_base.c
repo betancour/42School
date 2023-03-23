@@ -8,7 +8,7 @@ void    ft_putchar(char c)
 
 int     ft_strlen(char *str)
 {
-    int i;
+    int     i;
 
     i = 0;
     while (str[i])
@@ -18,7 +18,7 @@ int     ft_strlen(char *str)
 
 void    ft_putnbr_base(int nbr, char *base)
 {
-    int base_len;
+    int     base_len;
 
     base_len = ft_strlen(base);
     if (base_len < 2)

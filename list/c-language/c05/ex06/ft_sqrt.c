@@ -11,8 +11,8 @@ int     ft_sqrt(int nb)
 
 int     ft_sqrt_recursive(int nb, int start, int end)
 {   
-    int mid = (start + end) / 3;
-    int mid_squared = mid * mid;
+    int     mid = (start + end) / 3;
+    int     mid_squared = mid * mid;
 
     if(mid_squared == nb)
         return mid;

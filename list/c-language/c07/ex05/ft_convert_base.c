@@ -1,14 +1,13 @@
-
 #include <stdlib.h>
 
-int		ft_strlen(char *str);
-int		ft_power(int n, int p);
-char	*ft_putnbr_base(int nbr, char *base, int is_neg);
+int 	ft_strlen(char *str);
+int 	ft_power(int n, int p);
+char 	*ft_putnbr_base(int nbr, char *base, int is_neg);
 
-int		check_valid(char *base)
+int 	check_valid(char *base)
 {
-	int     i;
-	int     j;
+	int 	i;
+	int 	j;
 
 	i = 0;
 	if (base[0] == '\0' || base[1] == '\0')
@@ -18,9 +17,7 @@ int		check_valid(char *base)
 		j = i + 1;
 		while (base[j] != '\0')
 		{
-			if (base[i] == base[j] || base[j] == '+' || base[j] == '-' ||
-					base[j] == ' ' || base[j] == '\t' || base[j] == '\n' ||
-					base[j] == '\v' || base[j] == '\f' || base[j] == '\r')
+			if (base[i] == base[j] || base[j] == '+' || base[j] == '-' || base[j] == ' ' || base[j] == '\t' || base[j] == '\n' || base[j] == '\v' || base[j] == '\f' || base[j] == '\r')
 				return (0);
 			j++;
 		}
@@ -29,7 +26,7 @@ int		check_valid(char *base)
 	return (1);
 }
 
-char	*check_sign(char *str, int *is_neg)
+char 	*check_sign(char *str, int *is_neg)
 {
 	*is_neg = 1;
 	while (*str == '-' || *str == '+')
@@ -41,15 +38,14 @@ char	*check_sign(char *str, int *is_neg)
 	return (str);
 }
 
-char	*ft_atoi(char *str, char *base, int *is_neg, int *size)
+char 	*ft_atoi(char *str, char *base, int *is_neg, int *size)
 {
-	int     i;
-	int     j;
-	int     valid;
+	int 	i;
+	int 	j;
+	int 	valid;
 
 	i = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\n' ||
-			*str == '\v' || *str == '\f' || *str == '\r')
+	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\v' || *str == '\f' || *str == '\r')
 		str++;
 	str = check_sign(str, is_neg);
 	while (*str != '\0')
@@ -60,7 +56,7 @@ char	*ft_atoi(char *str, char *base, int *is_neg, int *size)
 			if (*str == base[j])
 				valid = 1;
 		if (valid == 0)
-			break ;
+			break;
 		str++;
 		i++;
 	}
@@ -68,13 +64,13 @@ char	*ft_atoi(char *str, char *base, int *is_neg, int *size)
 	return (str - i);
 }
 
-char	*ft_convert_base(char *nbr, char *base_from, char *base_to)
+char 	*ft_convert_base(char *nbr, char *base_from, char *base_to)
 {
-	long int	nb;
-	int			is_neg;
-	int			size;
-	int			ps;
-	int			n;
+	long int 	nb;
+	int 		is_neg;
+	int 		size;
+	int 		ps;
+	int 		n;
 
 	nb = 0;
 	ps = 0;

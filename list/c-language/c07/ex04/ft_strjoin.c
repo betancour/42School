@@ -1,9 +1,9 @@
 #include <stdlib.h>
 
-int ft_strlen(char const *str)
+int     ft_strlen(char const *str)
 {
-    int i;
-    int j;
+    int     i;
+    int     j;
 
     i = 0;
     j = 0;

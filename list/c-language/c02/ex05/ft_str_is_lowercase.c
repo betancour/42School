@@ -1,6 +1,6 @@
-int ft_str_is_lowercase(char *str)
+int     ft_str_is_lowercase(char *str)
 {
-    int i;
+    int     i;
 
     i = 0;
     if (!str)

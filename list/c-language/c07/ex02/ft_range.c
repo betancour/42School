@@ -2,8 +2,8 @@
 
 int     *ft_range(int start, int end)
 {
-    int *range;
-    int i;
+    int     *range;
+    int     i;
 
     if(start > end)
         return(NULL);

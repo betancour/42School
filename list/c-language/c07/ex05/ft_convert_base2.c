@@ -1,21 +1,18 @@
 #include <stdlib.h>
 
-int		ft_strlen(char *str)
+int 	ft_strlen(const char *str)
 {
-	int    	len;
+	int 	len;
 
 	len = 0;
-	while (*str)
-	{
+	while (str[len])
 		len++;
-		str++;
-	}
 	return (len);
 }
 
-int		ft_power(int n, int p)
+int 	ft_power(int n, int p)
 {
-	int      result;
+	int result;
 
 	result = 1;
 	if (p < 0)
@@ -28,9 +25,9 @@ int		ft_power(int n, int p)
 	return (result);
 }
 
-int		get_len(long int nbr, int size, int is_neg)
+int 	get_len(long int nbr, int size, int is_neg)
 {
-	int     i;
+	int 	i;
 
 	i = 0;
 	if (is_neg == -1)
@@ -43,10 +40,10 @@ int		get_len(long int nbr, int size, int is_neg)
 	return (i);
 }
 
-char	*ft_print_rc(long int nbr, char *base, char *res, int is_neg)
+char 	*ft_print_rc(long int nbr, const char *base, char *res, int is_neg)
 {
-	int		i;
-	int		size;
+	int 	i;
+	int 	size;
 
 	i = 0;
 	size = get_len(nbr, ft_strlen(base), is_neg);
@@ -66,17 +63,17 @@ char	*ft_print_rc(long int nbr, char *base, char *res, int is_neg)
 	return (res);
 }
 
-char	*ft_putnbr_base(long int nbr, char *base, int is_neg)
+char 	*ft_putnbr_base(long int nbr, const char *base, int is_neg)
 {
-	long int	nb;
-	char		*res;
-	int			size;
-	int			len;
+	long int 	nb;
+	char 		*res;
+	int 		size;
+	int 		len;
 
 	nb = nbr;
 	size = ft_strlen(base);
 	len = get_len(nb, size, is_neg);
-	if ((res = (char*)malloc(sizeof(char) * (len + 1))) == NULL)
+	if ((res = (char *)malloc(sizeof(char) * (len + 1))) == NULL)
 		return (NULL);
 	res[len] = '\0';
 	if ((is_neg == -1 && len == 1) || (len == 0 && is_neg == 0))
