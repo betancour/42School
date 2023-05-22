@@ -1,23 +1,39 @@
+NAME := ft_cat
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -c
+LFLAGS = -Wall -Wextra -Werror -o
+SRC_DIR := 	./srcs/
+OBJ_DIR = 	./obj/
+SRC_FILES := 	ft_display_custom_error.c \
+				ft_display_file.c \
+				ft_get_strerr.c \
+				ft_putchar.c \
+				ft_putstr.c \
+				ft_stdin.c \
+				ft_cat.c \
+				main.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
+SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+HEADER := -I includes/
+RM := rm -rf
 
-SRCS = ft_cat.c
-OBJS = $(SRCS:.c=.o)
-TARGET = ft_cat
+all: obj $(NAME)
 
-all: $(TARGET)
+obj: $(SRCS)
+	@mkdir -p $(OBJ_DIR)
 
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(CFLAGS) $< -o $@ $(HEADER)
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(OBJS)
+	$(CC) $(LFLAGS) $(NAME) $(OBJS) $(HEADER)
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(TARGET)
+	/bin/rm -f $(NAME)
 
 re: fclean all
 

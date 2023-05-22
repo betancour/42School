@@ -1,22 +1,42 @@
-NAME = ft_tail
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror
-SRCS = ft_tail.c ft_putchar.c ft_atoi.c ft_strlen.c ft_strcpy.c
-OBJS = $(SRCS:.c=.o)
+NAME := ft_tail
+CC := gcc
+CFLAGS := -Wall -Werror -Wextra -c
+LFLAGS	= -Wall -Werror -Wextra -o
+SRC_DIR := ./srcs/
+OBJ_DIR	= ./obj/
+SRC_FILES := ft_display_custom_error.c \
+			 ft_atoi.c \
+			 ft_get_strerr.c \
+			 ft_stdin.c \
+			 ft_putchar.c \
+			 ft_putstr.c \
+			 ft_size_file.c \
+			 ft_print_name.c \
+			 ft_display_file.c \
+			 ft_tail.c \
+			 main.c
+OBJ_FILES = $(SRC_FILES:.c=.o)
+SRCS = $(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJS = $(addprefix $(OBJ_DIR), $(OBJ_FILES))
+HEADER := -I includes/
+RM := rm -rf
 
-all: $(NAME)
+all: obj $(NAME)
+
+obj: $(SRCS)
+	@mkdir -p $(OBJ_DIR)
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(CFLAGS) $< -o $@ $(HEADER)
 
 $(NAME): $(OBJS)
-	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(LFLAGS) $(NAME) $(OBJS) $(HEADER)
 
 clean:
-	rm -f $(OBJS)
+	$(RM) $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all
 
