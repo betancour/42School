@@ -1,6 +1,14 @@
 #include "../includes/ft_lib.h"
 
-const char *ft_get_strerr(int eno)
+const char      *ft_get_strerr(int errnum)
 {
-    return strerror(eno);
+    extern const char *const        sys_errlist[];
+    extern int      sys_nerr;
+
+    if (errnum < 0)
+        errnum = -errnum;
+    if (errnum < sys_nerr)
+        return (sys_errlist[errnum]);
+
+    return ((const char *)"Uknown Error!");
 }

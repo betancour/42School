@@ -9,7 +9,7 @@ void    ft_stdin(void)
     {
         if (r == -1)
         {
-            ft_putstr((char *)ft_get_strerr(errno));
+            ft_putstr((char *)ft_get_strerr(errnum));
             break;
         }
         else

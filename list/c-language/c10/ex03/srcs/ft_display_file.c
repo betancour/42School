@@ -3,7 +3,7 @@
 void	ft_display_file(int i, int fd, int argc, char **argv)
 {
 	char	buffer;
-	int		rnum;
+	int		num;
 	int		readed;
 	int		offset;
 
@@ -14,20 +14,20 @@ void	ft_display_file(int i, int fd, int argc, char **argv)
 		readed = 0;
 		while (readed < offset)
 		{
-			if ((rnum = read(fd, &buffer, 1)) == -1)
+			if ((num = read(fd, &buffer, 1)) == -1)
 			{
-				ft_display_custom_error(errno, argv[i]);
+				ft_display_custom_error(errnum, argv[i]);
 				break;
 			}
-			readed += rnum;
+			readed += num;
 		}
 		if (readed == offset)
 		{
-			while  ((rnum = read(fd, &buffer, 1)))
+			while ((num = read(fd, &buffer, 1)))
 			{
-				if (rnum == -1)
+				if (num == -1)
 				{
-					ft_display_custom_error(errno, argv[i]);
+					ft_display_custom_error(errnum, argv[i]);
 					break;
 				}
 				write(1, &buffer, 1);

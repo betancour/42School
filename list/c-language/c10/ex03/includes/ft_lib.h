@@ -14,7 +14,7 @@ void       ft_putstr(const char *str);
 int        ft_atoi(char *str);
 
 const char      *ft_get_strerr(int errnum);
-void            ft_display_custom_error(int eno, char *argv);
+void ft_display_custom_error(int errnum, char *argv);
 
 int        ft_size_file(char *argv);
 void       ft_print_name(int i, int argc, char *argv);

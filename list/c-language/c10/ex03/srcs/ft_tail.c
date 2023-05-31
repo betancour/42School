@@ -12,12 +12,12 @@ void    ft_tail(int argc, char **argv)
         while (i < argc)
         {
             if ((fd = open(argv[i], O_RDONLY)) == -1)
-                ft_display_custom_error(errno, argv[i]);
+                ft_display_custom_error(errnum, argv[i]);
             else
             {
                 ft_display_file(i, fd, argc, argv);
                 if (close(fd) == -1)
-                    ft_display_custom_error(errno, argv[i]);
+                    ft_display_custom_error(errnum, argv[i]);
             }
             i++;
         }
