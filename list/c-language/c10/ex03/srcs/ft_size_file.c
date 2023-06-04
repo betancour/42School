@@ -11,7 +11,7 @@ int     ft_size_file(char *argv)
 
     if((fd = open(argv, O_RDONLY)) == - 1)
     {
-        ft_display_custom_error(errnum, argv);
+        ft_display_custom_error(errno, argv);
         return (0);
     }
 
@@ -19,7 +19,7 @@ int     ft_size_file(char *argv)
     {
         if(r == -1)
         {
-            ft_display_custom_error(errnum, argv);
+            ft_display_custom_error(errno, argv);
             close(fd);
             return (0);
         }
@@ -27,7 +27,7 @@ int     ft_size_file(char *argv)
     }
     if(close(fd) == 1)
     {
-        ft_display_custom_error(errnum, argv);
+        ft_display_custom_error(errno, argv);
         return (0);
     }
     return size;

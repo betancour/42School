@@ -30,7 +30,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	$(CC) $(CFLAGS) $< -o $@ $(HEADER)
 
 $(NAME): $(OBJS)
-	$(CC) $(LFLAGS) $(NAME) $(OBJS) $(HEADER)
+	$(CC) $(LFLAGS) $(NAME) $(OBJS) $(HEADER) -lc
 
 clean:
 	$(RM) $(OBJ_DIR)

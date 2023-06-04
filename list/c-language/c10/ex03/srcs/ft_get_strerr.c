@@ -1,9 +1,10 @@
 #include "../includes/ft_lib.h"
 
+
 const char      *ft_get_strerr(int errnum)
 {
-    extern const char *const        sys_errlist[];
-    extern int      sys_nerr;
+    extern const char *const    sys_errlist[];
+    extern int                  sys_nerr;
 
     if (errnum < 0)
         errnum = -errnum;

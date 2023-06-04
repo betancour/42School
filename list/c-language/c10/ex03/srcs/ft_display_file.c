@@ -16,7 +16,7 @@ void	ft_display_file(int i, int fd, int argc, char **argv)
 		{
 			if ((num = read(fd, &buffer, 1)) == -1)
 			{
-				ft_display_custom_error(errnum, argv[i]);
+				ft_display_custom_error(errno, argv[i]);
 				break;
 			}
 			readed += num;
@@ -27,7 +27,7 @@ void	ft_display_file(int i, int fd, int argc, char **argv)
 			{
 				if (num == -1)
 				{
-					ft_display_custom_error(errnum, argv[i]);
+					ft_display_custom_error(errno, argv[i]);
 					break;
 				}
 				write(1, &buffer, 1);
