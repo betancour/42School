@@ -1,4 +1,5 @@
 #include "../includes/ft_lib.h"
+#include <errno.h>
 
 
 const char      *ft_get_strerr(int errnum)
