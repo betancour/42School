@@ -1,15 +1,15 @@
-ft_str_is_printable     (char *str)
+ft_str_is_printable	(char	*str)
 {
-    int     i;
+	int	i;
 
-    i = 0;
+	i = 0;
 
-    while (str[i] != '\n')
-    {
-        if (str[i] < 32 || str[i] > 126)
-            return (0);
-        i++;
-    }
-    return (1);
+	while (str[i] != '\n')
+	{
+		if (str[i] < 32 || str[i] > 126)
+			return (0);
+		i++;
+	}
+	return (1);
 }
 

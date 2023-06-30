@@ -3,9 +3,10 @@
 
 #include <unistd.h>
 
-typedef enum {
-    FALSE = 0,
-    TRUE = 1
+typedef enum
+{
+	FALSE = 0,
+	TRUE = 1
 } t_bool;
 
 #define EVEN(x) ((x) % 2 == 0)

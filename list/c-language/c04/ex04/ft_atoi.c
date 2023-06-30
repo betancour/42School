@@ -1,22 +1,21 @@
-int     ft_atoi(char *str)
+int	ft_atoi(char	*str)
 {
-    int     sign = 1;
-    int     result = 0;
-    
-    while(*str == ' ' || (*str >= 9 && *str <= 13))
-        str++;
-    if(*str == '-' || *str == '+')
-    {
-        if(*str == '-')
-            sign = -1;
-        str++;
-    }
+	int	sign = 1;
+	int	result = 0;
 
-    while (*str >= '0' && *str <= '9')
-    {
-        result = result * 10 + (*str - '0');
-        str++;
-    }
+	while(*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if(*str == '-' || *str == '+')
+	{
+		if(*str == '-')
+			sign = -1;
+		str++;
+	}
 
-    return sign * result;
+	while (*str >= '0' && *str <= '9')
+	{
+		result = result * 10 + (*str - '0');
+		str++;
+	}
+	return sign * result;
 }

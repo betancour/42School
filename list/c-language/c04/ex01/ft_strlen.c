@@ -1,13 +1,12 @@
-int     ft_strlen(char *str)
+int	ft_strlen(char	*str)
 {
-    unsigned int len;
+	unsigned int	len;
 
-    len = 0;
-    while(*str)
-    {
-        len++;
-        str++;
-    }
-    return (len);   
-
+	len = 0;
+	while(*str)
+	{
+		len++;
+		str++;
+	}
+	return (len);
 }
