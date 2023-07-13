@@ -9,12 +9,13 @@
 
 extern const char *g_progname;
 
+size_t ft_strlen(const char *str);
 void  ft_stdin(void);
 void  ft_putchar(char c);
 void  ft_putstr(const char *str);
-int ft_atoi(char *str);
+int ft_atoi(const char *str);
 
-const char  *ft_get_strerr(int errnum);
+const char *ft_get_strerr(int errnum);
 void  ft_display_custom_error(int errnum, char *argv);
 
 int ft_size_file(char *argv);

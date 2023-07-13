@@ -1,7 +1,5 @@
 #include "../includes/ft_lib.h"
 
-const char      *g_progname;
-
 void ft_display_custom_error(int eno, char *argv)
 {
     ft_putstr(g_progname);
