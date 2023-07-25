@@ -1,7 +1,9 @@
 {
     "files.associations": {
-        "stdio.h": "c",
-        "string.h": "c"
-    },
-    "C_Cpp.errorSquiggles": "disabled"
+		"stdio.h": "c",
+		"string.h": "c",
+		"ft_lib.h": "c"
+	},
+	"C_Cpp.errorSquiggles": "enabled",
+	"cmake.configureOnOpen": true
 }
