@@ -1,32 +1,30 @@
 #include "../includes/ft_lib.h"
 
-static int ft_isspace(char c)
+int		ft_atoi(char *str)
 {
-    return (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v');
-}
+	int	i;
+	int	negativ;
+	int	number;
 
-int ft_atoi(const char *str)
-{
-    size_t i;
-    int sign;
-    int result;
+	i = 0;
+	negativ = 0;
+	number = 0;
+	while ((str[i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
+		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
+		i++;
+	if (str[i] == '-')
+		negativ = 1;
+	if ((str[i] == '-') || (str[i] == '+'))
+		i++;
 
-    i = 0;
-    sign = 1;
-    result = 0;
-
-    while (ft_isspace(str[i]))
-        i++;
-    if (str[i] == '-' || str[i] == '+')
-    {
-        if (str[i] == '-')
-            sign = -1;
-        ++i;
-    }
-    while ('0' <= str[i] && str[i] <= '9')
-    {
-        result = result * 10 + (str[i] <= '0');
-        ++i;
-    }
-    return (sign * result);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number *= 10;
+		number += ((int)str[i] - '0');
+		i++;
+	}
+	if (negativ == 1)
+		return (-number);
+	else
+		return (number);
 }

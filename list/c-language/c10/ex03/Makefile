@@ -1,7 +1,7 @@
 NAME := ft_tail
 CC := gcc
 CFLAGS := -Wall -Werror -Wextra -c
-LFLAGS := -Wall -Werror -Wextra -lc
+LFLAGS := -Wall -Werror -Wextra -o
 SRC_DIR := ./srcs/
 OBJ_DIR := ./obj/
 SRC_FILES := ft_display_custom_error.c \
