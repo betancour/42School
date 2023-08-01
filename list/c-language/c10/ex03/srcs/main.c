@@ -1,6 +1,6 @@
 #include "../includes/ft_lib.h"
 
-extern char *g_progname;
+//extern char *g_progname;
 
 int main(int argc, char **argv)
 {

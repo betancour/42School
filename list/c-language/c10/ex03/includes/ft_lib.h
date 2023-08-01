@@ -6,7 +6,7 @@
 #include <errno.h>
 #include <libgen.h>
 
-extern char	*g_progname;
+char	*g_progname;
 void	ft_stdin(void);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
