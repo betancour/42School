@@ -1,7 +1,9 @@
 #include "../includes/ft_lib.h"
 
-int     main(int argc, char **argv)
+extern char *g_progname;
+
+int main(int argc, char **argv)
 {
-    ft_tail(argc, argv);
-    return 0;
+	ft_tail(argc, argv);
+	return 0;
 }
